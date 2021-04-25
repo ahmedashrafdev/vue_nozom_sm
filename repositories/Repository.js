@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create ({
-    baseURL: 'http://192.168.1.40:8585/api/',
+    baseURL: process.env.VUE_APP_API_URL,
     headers: { 'Accept': 'application/json'}
 })
 

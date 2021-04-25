@@ -78,6 +78,10 @@ export default {
       console.log('test')
     },
     goToFirst(){
+      if(this.$route.query.type !== -1){
+        this.$store.commit('ui/modal' , true)
+        return
+      } 
       this.$router.push({name:'buy' , query: {store :  localStorage.getItem('store') , supplier : 0 , invoice : 0  , transaction : this.$route.query.transaction}})
     },
     editItem(item){

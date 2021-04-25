@@ -1,5 +1,5 @@
 export const state = () => ({
-    buyModal: false,
+    modal: false,
     buyReturnModal:false,
     inventoryModal:false,
     sellModal:false,
@@ -8,8 +8,8 @@ export const state = () => ({
   })
   
 export const mutations = {
-    buyModal(state , payload){
-        state.buyModal = payload
+    modal(state , payload){
+        state.modal = payload
     },
     buyReturnModal(state , payload){
         state.buyReturnModal = payload
@@ -31,8 +31,8 @@ export const mutations = {
 
   
 export const getters = {
-    buyModal(state) {
-        return state.buyModal
+    modal(state) {
+        return state.modal
     },
     buyReturnModal(state) {
         return state.buyReturnModal

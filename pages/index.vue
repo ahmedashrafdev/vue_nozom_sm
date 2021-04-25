@@ -30,14 +30,14 @@ export default {
       if(tab.link == 'trolley-check'){
         this.$router.push({name : 'trolley-check' , query :{ store : localStorage.getItem('store')}})
       } else if (tab.link == 'first') {
-        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type}})
+        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type , accountType : tab.accountType}})
       } else if (tab.link === 'settings'){
         this.$router.push({name : "settings"})
       }else if (tab.link === 'logout'){
         document.localStorage.removeItem('auth._token.local')
          this.$router.push({name : "login"})
       } else {
-        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type}})
+        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type , accountType : tab.accountType}})
       }
     }
   },
@@ -50,6 +50,7 @@ export default {
           text : 'مشتريات',
           transSerial: 19,
           link : 'buy',
+          accountType :2,
           type : 2,
         },
         {
@@ -57,6 +58,7 @@ export default {
           text : 'مرتجع مشتريات',
           transSerial: 26,
           link : 'buy-return',
+          accountType :2,
           type : 2,
         },
         {
@@ -64,6 +66,7 @@ export default {
           text : 'مبيعات',
           transSerial: 30,
           link : 'sell',
+          accountType :1,
           type : 1,
         },
         {
@@ -71,6 +74,8 @@ export default {
           text : ' مرتجع مبيعات',
           transSerial: 20,
           link : 'sell-return',
+
+          accountType :1,
           type : 1,
         },
         
@@ -81,6 +86,7 @@ export default {
           text : ' صرف تحويلات ',
           transSerial: 27,
           link : 'transaction',
+          accountType :-1,
           type : 3,
         },
         {
@@ -88,13 +94,15 @@ export default {
           text : ' استلام تحويلات',
           transSerial: 22,
           link : 'recieve-transaction',
-          type : 1,
+          accountType :-1,
+          type : -1,
         },
         {
           icon : 'mdi-cloud-upload',
           text : ' رصيد اول مدة',
           transSerial: 24,
           link : 'first',
+          accountType :-1,
           type : -1,
         },
         
@@ -103,13 +111,15 @@ export default {
           text : 'مراجعة اسعار',
           transSerial: -1,
           link : 'trolley-check',
-          type : 1,
+          accountType :-1,
+          type : -1,
         },
         {
           icon : 'mdi-package-variant-closed',
           text : 'ادوات الجرد',
           transSerial: 31,
           link : 'inventory',
+          accountType :-1,
           type : 0,
         },
         
@@ -118,21 +128,24 @@ export default {
           text : 'طباعة ملصق الرف',
           transSerial: '',
           link : '',
-          type : 1,
+          accountType :-1,
+          type : -1,
         },
         {
           icon : 'mdi-cog-outline',
           text : "الاعدادات",
           transSerial: '',
           link : 'settings',
-          type : 1,
+          accountType :-1,
+          type : -1,
         },
         {
           icon : 'mdi-logout-variant',
           text : "تسجيل الخروج",
           transSerial: '',
           link : 'logout',
-          type : 1,
+          accountType :-1,
+          type : -1,
         }
       ]
       
